@@ -77,6 +77,5 @@ C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\Candid
 C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\obj\Debug\CandidatosSistema.csprojResolveAssemblyReference.cache
 C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\obj\Debug\CandidatosSistema.dll
 C:\Users\raul.cortes\Documents\GitHub\SistemaCandidatos\CandidatosSistema\CandidatosSistema\obj\Debug\CandidatosSistema.pdb
