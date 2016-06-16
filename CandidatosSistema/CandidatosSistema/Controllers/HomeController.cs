@@ -10,17 +10,9 @@ namespace CandidatosSistema.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["LogedUserID"] == null)
-            {
-                return View();
-            }
 
-            else
-            {
-                return RedirectToAction("Index");
-            }
+            return View();
 
-         
         }
 
         public ActionResult About()
@@ -57,12 +49,29 @@ namespace CandidatosSistema.Controllers
                     {
                         Session["LogedUserID"] = v.UsuarioId.ToString();
                         Session["LogedUserFullname"] = v.Nombre.ToString();
-                        return RedirectToAction("Index");
+                        return RedirectToAction("AfterLogin");
                     }
                 }
 
             }
             return View(u);
+        }
+
+
+
+        public ActionResult AfterLogin()
+        {
+            if (Session["LogedUserID"] != null)
+            {
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+
         }
 
 

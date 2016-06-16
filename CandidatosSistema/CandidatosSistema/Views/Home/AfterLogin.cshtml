@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "AfterLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bienbenedo al sistema de Cadidatos Agentia</h2>
+
+@if (Session["LogedUserFullname"] != null)
+{
+    <text>
+        Bienbenido - @Session["LogedUserFullname"].ToString()
+
+    </text>
+
+}
+
+
