@@ -26,9 +26,9 @@ namespace CandidatosSistema.Models
         }
     
         public virtual DbSet<Candidato> Candidato { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Escolaridad> Escolaridad { get; set; }
         public virtual DbSet<Localidad> Localidad { get; set; }
         public virtual DbSet<Sueldo> Sueldo { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

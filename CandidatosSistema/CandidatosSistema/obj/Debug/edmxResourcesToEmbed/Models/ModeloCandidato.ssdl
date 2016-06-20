@@ -22,7 +22,7 @@
     </Key>
     <Property Name="EscolaridadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Clave" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Estado" Type="bit" />
     <Property Name="FechaCaptura" Type="date" />
   </EntityType>
@@ -41,8 +41,9 @@
       <PropertyRef Name="SueldoId" />
     </Key>
     <Property Name="SueldoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Calve" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="10" />
+    <Property Name="Clave" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Estado" Type="bit" />
     <Property Name="FechaCaptura" Type="date" />
   </EntityType>
   <EntityType Name="Usuario">

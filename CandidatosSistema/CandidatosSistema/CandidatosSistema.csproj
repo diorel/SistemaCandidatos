@@ -202,7 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SueldoesController.cs" />
+    <Compile Include="Controllers\SueldoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -392,6 +392,11 @@
     <Content Include="Views\Shared\LoginRaul.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\AfterLogin.cshtml" />
+    <Content Include="Views\Sueldo\Create.cshtml" />
+    <Content Include="Views\Sueldo\Delete.cshtml" />
+    <Content Include="Views\Sueldo\Details.cshtml" />
+    <Content Include="Views\Sueldo\Edit.cshtml" />
+    <Content Include="Views\Sueldo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

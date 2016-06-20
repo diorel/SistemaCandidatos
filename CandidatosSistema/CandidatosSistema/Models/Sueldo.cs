@@ -21,8 +21,9 @@ namespace CandidatosSistema.Models
         }
     
         public int SueldoId { get; set; }
-        public string Calve { get; set; }
+        public string Clave { get; set; }
         public string Descripcion { get; set; }
+        public Nullable<bool> Estado { get; set; }
         public Nullable<System.DateTime> FechaCaptura { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

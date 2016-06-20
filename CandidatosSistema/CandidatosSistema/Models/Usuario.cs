@@ -11,28 +11,13 @@ namespace CandidatosSistema.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Web;
-
+    
     public partial class Usuario
     {
-         public int UsuarioId { get; set; }
-         public string Nombre { get; set; }
-
-        [Required(ErrorMessage ="Porfavor ingrese su nombre", AllowEmptyStrings = false) ] // Dato requerido
-        [StringLength(80)] // Logitud maxima del campo
-        [Display(Name = "Usurio")] // Mensaje de que el camppo es obligatorio    
+        public int UsuarioId { get; set; }
+        public string Nombre { get; set; }
         public string Usuario1 { get; set; }
-
-        [Required(ErrorMessage ="Por favor ingrese su Contraseña", AllowEmptyStrings = false) ] // dato requerido
-        [DataType(System.ComponentModel.DataAnnotations.DataType.Password)] // se indica que el campo es de tipo password
-        // [DataType(DataType.Password)] // idica que el campo es de tipo passsword
-        [StringLength(50, MinimumLength = 5)] // longitud minima y maxima
-        [Display(Name = "Contraseña")] // Mensaje indica quie es obligatorio
         public string Clave { get; set; }
-
-
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<bool> Estado { get; set; }
     }

@@ -10,17 +10,17 @@ using CandidatosSistema.Models;
 
 namespace CandidatosSistema.Controllers
 {
-    public class SueldoesController : Controller
+    public class SueldoController : Controller
     {
         private SisCandidatosEntities db = new SisCandidatosEntities();
 
-        // GET: Sueldoes
+        // GET: Sueldo
         public ActionResult Index()
         {
             return View(db.Sueldo.ToList());
         }
 
-        // GET: Sueldoes/Details/5
+        // GET: Sueldo/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace CandidatosSistema.Controllers
             return View(sueldo);
         }
 
-        // GET: Sueldoes/Create
+        // GET: Sueldo/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sueldoes/Create
+        // POST: Sueldo/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SueldoId,Calve,Descripcion,FechaCaptura")] Sueldo sueldo)
+        public ActionResult Create([Bind(Include = "SueldoId,Clave,Descripcion,Estado,FechaCaptura")] Sueldo sueldo)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace CandidatosSistema.Controllers
             return View(sueldo);
         }
 
-        // GET: Sueldoes/Edit/5
+        // GET: Sueldo/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,12 +73,12 @@ namespace CandidatosSistema.Controllers
             return View(sueldo);
         }
 
-        // POST: Sueldoes/Edit/5
+        // POST: Sueldo/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SueldoId,Calve,Descripcion,FechaCaptura")] Sueldo sueldo)
+        public ActionResult Edit([Bind(Include = "SueldoId,Clave,Descripcion,Estado,FechaCaptura")] Sueldo sueldo)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace CandidatosSistema.Controllers
             return View(sueldo);
         }
 
-        // GET: Sueldoes/Delete/5
+        // GET: Sueldo/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace CandidatosSistema.Controllers
             return View(sueldo);
         }
 
-        // POST: Sueldoes/Delete/5
+        // POST: Sueldo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
