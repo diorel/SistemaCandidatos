@@ -17,7 +17,7 @@ namespace CandidatosSistema.Controllers
         // GET: Candidato
         public ActionResult Index()
         {
-            var candidato = db.Candidato.Include(c => c.Escolaridad).Include(c => c.Localidad).Include(c => c.Sueldo);
+            var candidato = db.Candidato.Include(c => c.Escolaridad).Include(c => c.Especialidad).Include(c => c.Localidad).Include(c => c.Sueldo);
             return View(candidato.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace CandidatosSistema.Controllers
         public ActionResult Create()
         {
             ViewBag.EscolaridadId = new SelectList(db.Escolaridad, "EscolaridadId", "Clave");
+            ViewBag.EspecialidadId = new SelectList(db.Especialidad, "EspecialidadId", "Calve");
             ViewBag.LocalidadId = new SelectList(db.Localidad, "LocalidadId", "Clave");
             ViewBag.SueldoId = new SelectList(db.Sueldo, "SueldoId", "Clave");
             return View();
@@ -50,7 +51,7 @@ namespace CandidatosSistema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CandisatoId,Nombre,Telefono,Correo,LocalidadId,SueldoId,EscolaridadId,EstadoCandidato,Capturista,FechaCaptura,Archivo")] Candidato candidato)
+        public ActionResult Create([Bind(Include = "CandisatoId,Nombre,Telefono,Correo,LocalidadId,SueldoId,EscolaridadId,EspecialidadId,EstadoCandidato,Capturista,FechaCaptura,Archivo")] Candidato candidato)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +61,7 @@ namespace CandidatosSistema.Controllers
             }
 
             ViewBag.EscolaridadId = new SelectList(db.Escolaridad, "EscolaridadId", "Clave", candidato.EscolaridadId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidad, "EspecialidadId", "Calve", candidato.EspecialidadId);
             ViewBag.LocalidadId = new SelectList(db.Localidad, "LocalidadId", "Clave", candidato.LocalidadId);
             ViewBag.SueldoId = new SelectList(db.Sueldo, "SueldoId", "Clave", candidato.SueldoId);
             return View(candidato);
@@ -78,6 +80,7 @@ namespace CandidatosSistema.Controllers
                 return HttpNotFound();
             }
             ViewBag.EscolaridadId = new SelectList(db.Escolaridad, "EscolaridadId", "Clave", candidato.EscolaridadId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidad, "EspecialidadId", "Calve", candidato.EspecialidadId);
             ViewBag.LocalidadId = new SelectList(db.Localidad, "LocalidadId", "Clave", candidato.LocalidadId);
             ViewBag.SueldoId = new SelectList(db.Sueldo, "SueldoId", "Clave", candidato.SueldoId);
             return View(candidato);
@@ -88,7 +91,7 @@ namespace CandidatosSistema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CandisatoId,Nombre,Telefono,Correo,LocalidadId,SueldoId,EscolaridadId,EstadoCandidato,Capturista,FechaCaptura,Archivo")] Candidato candidato)
+        public ActionResult Edit([Bind(Include = "CandisatoId,Nombre,Telefono,Correo,LocalidadId,SueldoId,EscolaridadId,EspecialidadId,EstadoCandidato,Capturista,FechaCaptura,Archivo")] Candidato candidato)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +100,7 @@ namespace CandidatosSistema.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.EscolaridadId = new SelectList(db.Escolaridad, "EscolaridadId", "Clave", candidato.EscolaridadId);
+            ViewBag.EspecialidadId = new SelectList(db.Especialidad, "EspecialidadId", "Calve", candidato.EspecialidadId);
             ViewBag.LocalidadId = new SelectList(db.Localidad, "LocalidadId", "Clave", candidato.LocalidadId);
             ViewBag.SueldoId = new SelectList(db.Sueldo, "SueldoId", "Clave", candidato.SueldoId);
             return View(candidato);

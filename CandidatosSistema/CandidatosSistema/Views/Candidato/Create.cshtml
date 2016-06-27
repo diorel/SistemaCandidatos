@@ -7,6 +7,7 @@
 
 <h2>Create</h2>
 
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -39,27 +40,13 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.Sueldo.Descripcion, "LocalidadId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.LocalidadId, "LocalidadId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("LocalidadId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LocalidadId, "", new { @class = "text-danger" })
             </div>
-        </div>*@
-        
-        @*<div class="form-group" >
-            @Html.LabelFor(mo = > Model.Sueldo.Descripcion,"Sueldo",htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>*@  
-
-        @*en este es otro control nuevo*@
-        <div class="form-group">
-            @Html.LabelFor(model => model.Localidad.Descripcion, "LocalidadId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("LocalidadId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Localidad.Descripcion, "", new { @class = "text-danger" })
-            </div>
         </div>
-        @*en este es otro control nuevo*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.SueldoId, "SueldoId", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -74,6 +61,14 @@
             <div class="col-md-10">
                 @Html.DropDownList("EscolaridadId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EscolaridadId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EspecialidadId, "EspecialidadId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("EspecialidadId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EspecialidadId, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -122,3 +117,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

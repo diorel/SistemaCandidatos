@@ -11,6 +11,7 @@
     <Property Name="LocalidadId" Type="int" />
     <Property Name="SueldoId" Type="int" />
     <Property Name="EscolaridadId" Type="int" />
+    <Property Name="EspecialidadId" Type="int" />
     <Property Name="EstadoCandidato" Type="bit" />
     <Property Name="Capturista" Type="varchar" MaxLength="150" />
     <Property Name="FechaCaptura" Type="datetime" />
@@ -21,8 +22,18 @@
       <PropertyRef Name="EscolaridadId" />
     </Key>
     <Property Name="EscolaridadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Clave" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="bit" />
+    <Property Name="FechaCaptura" Type="date" />
+  </EntityType>
+  <EntityType Name="Especialidad">
+    <Key>
+      <PropertyRef Name="EspecialidadId" />
+    </Key>
+    <Property Name="EspecialidadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Calve" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
     <Property Name="Estado" Type="bit" />
     <Property Name="FechaCaptura" Type="date" />
   </EntityType>
@@ -69,6 +80,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Candidato_Especialidad">
+    <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
+    <End Role="Candidato" Type="Self.Candidato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidad">
+        <PropertyRef Name="EspecialidadId" />
+      </Principal>
+      <Dependent Role="Candidato">
+        <PropertyRef Name="EspecialidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Candidato_Localidad">
     <End Role="Localidad" Type="Self.Localidad" Multiplicity="0..1" />
     <End Role="Candidato" Type="Self.Candidato" Multiplicity="*" />
@@ -96,11 +119,16 @@
   <EntityContainer Name="SisCandidatosModelStoreContainer">
     <EntitySet Name="Candidato" EntityType="Self.Candidato" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Escolaridad" EntityType="Self.Escolaridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Localidad" EntityType="Self.Localidad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sueldo" EntityType="Self.Sueldo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Candidato_Escolaridad" Association="Self.FK_Candidato_Escolaridad">
       <End Role="Escolaridad" EntitySet="Escolaridad" />
+      <End Role="Candidato" EntitySet="Candidato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidato_Especialidad" Association="Self.FK_Candidato_Especialidad">
+      <End Role="Especialidad" EntitySet="Especialidad" />
       <End Role="Candidato" EntitySet="Candidato" />
     </AssociationSet>
     <AssociationSet Name="FK_Candidato_Localidad" Association="Self.FK_Candidato_Localidad">

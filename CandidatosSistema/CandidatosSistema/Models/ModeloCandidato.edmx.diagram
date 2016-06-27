@@ -4,13 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9ae45adbb7474c2dbf2a176460e60ba3" Name="Diagram1">
-        <EntityTypeShape EntityType="SisCandidatosModel.Candidato" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SisCandidatosModel.Usuario" Width="1.5" PointX="5.25" PointY="0.875" />
-        <EntityTypeShape EntityType="SisCandidatosModel.Escolaridad" Width="1.5" PointX="5.125" PointY="3.125" />
+      <Diagram DiagramId="9ae45adbb7474c2dbf2a176460e60ba3" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="SisCandidatosModel.Usuario" Width="1.5" PointX="7.75" PointY="0.5" />
+        <EntityTypeShape EntityType="SisCandidatosModel.Escolaridad" Width="1.5" PointX="6.5" PointY="4.75" />
         <EntityTypeShape EntityType="SisCandidatosModel.Localidad" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="SisCandidatosModel.Sueldo" Width="1.5" PointX="0.875" PointY="3.5" />
+        <EntityTypeShape EntityType="SisCandidatosModel.Candidato" Width="1.5" PointX="3.75" PointY="1.375" />
+        <EntityTypeShape EntityType="SisCandidatosModel.Especialidad" Width="1.5" PointX="6" PointY="1.5" />
         <AssociationConnector Association="SisCandidatosModel.FK_Candidato_Escolaridad" />
+        <AssociationConnector Association="SisCandidatosModel.FK_Candidato_Especialidad" />
         <AssociationConnector Association="SisCandidatosModel.FK_Candidato_Localidad" />
         <AssociationConnector Association="SisCandidatosModel.FK_Candidato_Sueldo" />
       </Diagram>

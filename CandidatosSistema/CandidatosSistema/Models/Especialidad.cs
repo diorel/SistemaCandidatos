@@ -15,11 +15,11 @@ namespace CandidatosSistema.Models
 using System;
     using System.Collections.Generic;
     
-public partial class Escolaridad
+public partial class Especialidad
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Escolaridad()
+    public Especialidad()
     {
 
         this.Candidato = new HashSet<Candidato>();
@@ -27,9 +27,9 @@ public partial class Escolaridad
     }
 
 
-    public int EscolaridadId { get; set; }
+    public int EspecialidadId { get; set; }
 
-    public string Clave { get; set; }
+    public string Calve { get; set; }
 
     public string Descripcion { get; set; }
 

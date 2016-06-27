@@ -215,6 +215,9 @@
     <Compile Include="Models\Escolaridad.cs">
       <DependentUpon>ModeloCandidato.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Especialidad.cs">
+      <DependentUpon>ModeloCandidato.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Localidad.cs">
       <DependentUpon>ModeloCandidato.tt</DependentUpon>
@@ -374,11 +377,6 @@
     <Content Include="Views\Sueldoes\Details.cshtml" />
     <Content Include="Views\Sueldoes\Edit.cshtml" />
     <Content Include="Views\Sueldoes\Index.cshtml" />
-    <Content Include="Views\Candidato\Create.cshtml" />
-    <Content Include="Views\Candidato\Delete.cshtml" />
-    <Content Include="Views\Candidato\Details.cshtml" />
-    <Content Include="Views\Candidato\Edit.cshtml" />
-    <Content Include="Views\Candidato\Index.cshtml" />
     <Content Include="Views\Localidad\Create.cshtml" />
     <Content Include="Views\Localidad\Delete.cshtml" />
     <Content Include="Views\Localidad\Details.cshtml" />
@@ -397,6 +395,11 @@
     <Content Include="Views\Sueldo\Details.cshtml" />
     <Content Include="Views\Sueldo\Edit.cshtml" />
     <Content Include="Views\Sueldo\Index.cshtml" />
+    <Content Include="Views\Candidato\Create.cshtml" />
+    <Content Include="Views\Candidato\Delete.cshtml" />
+    <Content Include="Views\Candidato\Details.cshtml" />
+    <Content Include="Views\Candidato\Edit.cshtml" />
+    <Content Include="Views\Candidato\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
